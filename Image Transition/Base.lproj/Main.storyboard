@@ -1,24 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Image Transition-->
+        <scene sceneID="ph4-NO-XDN">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="dbR-60-JNv" customClass="ViewController" customModule="Image_Transition_Animation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5hI-i7-dke">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KF6-oO-Nw4">
+                                <rect key="frame" x="16" y="84" width="343" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="pby-nx-QRr"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Food"/>
+                                    <segment title="Nature"/>
+                                    <segment title="Sports"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="segmentControlChanged:" destination="dbR-60-JNv" eventType="valueChanged" id="mvT-qE-lsh"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="zlc-yr-QyK">
+                                <rect key="frame" x="16" y="157" width="343" height="490"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.034939933329999999" green="0.43586492640000002" blue="0.20677426779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ej7-1b-y8o" firstAttribute="trailing" secondItem="zlc-yr-QyK" secondAttribute="trailing" constant="16" id="0rx-CR-clb"/>
+                            <constraint firstItem="KF6-oO-Nw4" firstAttribute="leading" secondItem="Ej7-1b-y8o" secondAttribute="leading" constant="16" id="4Jk-Zk-vHV"/>
+                            <constraint firstItem="KF6-oO-Nw4" firstAttribute="top" secondItem="Ej7-1b-y8o" secondAttribute="top" constant="20" id="5cY-Qc-plT"/>
+                            <constraint firstItem="Ej7-1b-y8o" firstAttribute="bottom" secondItem="zlc-yr-QyK" secondAttribute="bottom" constant="20" id="EYp-bP-5aQ"/>
+                            <constraint firstItem="Ej7-1b-y8o" firstAttribute="trailing" secondItem="KF6-oO-Nw4" secondAttribute="trailing" constant="16" id="OET-yd-Eng"/>
+                            <constraint firstItem="zlc-yr-QyK" firstAttribute="top" secondItem="KF6-oO-Nw4" secondAttribute="bottom" constant="45" id="OeE-Q4-Wdg"/>
+                            <constraint firstItem="zlc-yr-QyK" firstAttribute="leading" secondItem="Ej7-1b-y8o" secondAttribute="leading" constant="16" id="tbh-td-H7b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ej7-1b-y8o"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Image Transition" id="B9x-CK-SYd"/>
+                    <connections>
+                        <outlet property="imageView" destination="zlc-yr-QyK" id="2X9-f9-Zjw"/>
+                        <outlet property="segmentControl" destination="KF6-oO-Nw4" id="z8P-WJ-zUf"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mqz-PM-Uhm" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Mhb-Hz-lRk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ngc-2f-hqm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YIS-Bk-zei">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dbR-60-JNv" kind="relationship" relationship="rootViewController" id="xpc-QK-P5V"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0VM-T3-Eqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="345" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="food" width="3709" height="5563"/>
+    </resources>
 </document>
